@@ -7,7 +7,7 @@ def init():
     log_file = f"log/log_{time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime())}.log"
     if not os.path.exists("log"):
         os.mkdir("log")
-    handler_test = logging.handlers.RotatingFileHandler(filename=log_file,maxBytes=10*1024*1024,backupCount=30) # stdout to file
+    handler_test = logging.handlers.RotatingFileHandler(filename=log_file,maxBytes=10*1024*1024,backupCount=30,encoding="utf8") # stdout to file
     handler_control = logging.StreamHandler()    # stdout to console
     handler_test.setLevel(logging.DEBUG)               # 设置ERROR级别
     handler_control.setLevel(logging.DEBUG)             # 设置INFO级别
